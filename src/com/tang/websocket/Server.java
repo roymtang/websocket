@@ -18,7 +18,6 @@ public class Server extends WebSocketServer {
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         // ws连接的时候触发的代码，onOpen中我们不做任何操作
-
     }
 
     @Override

@@ -53,11 +53,16 @@ public class Pool {
     }
 
     public static void sendMessageToAll(String message) {
+        System.out.println("1");
         Set<WebSocket> keySet = wsUserMap.keySet();
         synchronized (keySet) {
+            System.out.println("2");
+            System.out.println("user list:" + wsUserMap.size());
             for (WebSocket conn : keySet) {
                 String user = wsUserMap.get(conn);
+                System.out.println(user);
                 if (user != null) {
+                    System.out.println("发送消息：" + user);
                     conn.send(message);
                 }
             }
